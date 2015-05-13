@@ -1,6 +1,6 @@
 class RolesController < ApplicationController
   def index
-    @roles = Role.page(params[:page])
+    @role = Role.page(params[:page])
   end
 
   def show
@@ -12,9 +12,9 @@ class RolesController < ApplicationController
 
   def create_row
     @role = Role.new
-    @role.character_name = params[":character_name"]
-    @role.movie_id = params[":movie_id"]
-    @role.actor_id = params[":actor_id"]
+    @role.character_name = params[:character_name]
+    @role.movie_id = params[:movie_id]
+    @role.actor_id = params[:actor_id]
 
     @role.save
 

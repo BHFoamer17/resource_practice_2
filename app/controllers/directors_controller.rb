@@ -1,6 +1,6 @@
 class DirectorsController < ApplicationController
   def index
-    @director = Director.all
+    @director = Director.page(params[:page])
   end
 
   def show
